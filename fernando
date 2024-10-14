@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="icon" href="https://via.placeholder.com/32" type="image/png"> <!-- Favicon -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa; /* Fundo azul claro */
+        }
+        header {
+            background: #007acc; /* Azul forte */
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas pequenas */
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            flex: 1 1 100%; /* Logo ocupa 100% em telas pequenas */
+        }
+        .logo img {
+            width: 50px; /* Tamanho do logo */
+            height: auto;
+            margin-right: 10px;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a, .menu-button {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            background: #00acc1; /* Azul claro */
+            position: absolute;
+            top: 50px;
+            right: 0;
+            z-index: 1;
+            opacity: 0; /* Inicialmente invisível */
+            transition: opacity 0.5s ease; /* Efeito de fade-in */
+        }
+        .menu.show {
+            display: flex;
+            opacity: 1; /* Visível quando a classe 'show' é adicionada */
+        }
+        .menu a {
+            padding: 10px;
+            text-align: center;
+            border-top: 1px solid #0097a7; /* Bordas de um azul mais escuro */
+        }
+        section {
+            padding: 20px;
+            background: #fff; /* Branco para contraste */
+            margin: 20px;
+            border-radius: 5px;
+            border: 2px solid #00acc1; /* Borda azul claro */
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap; /* Permite que o conteúdo se ajuste em várias linhas */
+            align-items: center;
+            justify-content: space-between;
+        }
+        .text {
+            flex: 1;
+            margin: 0 10px;
+        }
+        img {
+            width: 400px; /* Tamanho fixo das imagens */
+            height: 400px;
+            margin: 0 3px; /* Espaçamento de 3px entre as imagens */
+            flex-shrink: 0; /* Impede que as imagens encolham */
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #007acc; /* Azul forte */
+            color: #fff;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+        .footer-info {
+            margin: 10px 0;
+        }
+        .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 800px) {
+            img {
+                width: 100%; /* Imagens ocupam 100% da largura em telas menores */
+                height: auto; /* Altura automática para manter a proporção */
+                margin: 10px 0; /* Espaçamento vertical em vez de horizontal */
+            }
+            .content {
+                flex-direction: column; /* Coloca texto e imagens em coluna */
+                align-items: center; /* Centraliza o conteúdo */
+            }
+            nav {
+                display: none; /* Esconde o menu em telas pequenas */
+            }
+            .menu {
+                display: flex; /* Exibe o menu ao lado do botão */
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 400px) {
+            header {
+                flex-direction: column; /* Coloca logo e menu em coluna */
+                align-items: flex-start; /* Alinha itens à esquerda */
+            }
+            .logo {
+                flex: 1 1 100%; /* Logo ocupa toda a largura */
+            }
+            .menu-button {
+                margin: 10px 0; /* Adiciona espaçamento ao botão do menu */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="https://via.placeholder.com/50" alt="Logo"> <!-- Logo do site -->
+        <h1>Bem-vindo ao Meu Site</h1>
+    </div>
+    <div class="menu-button" onclick="toggleMenu()">☰ Menu</div>
+    <nav class="menu" id="menu">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<section id="inicio">
+    <h2>Início</h2>
+    <div class="content">
+        <div class="text">
+            <p>Esta é a seção de início do meu site. Aqui você encontrará as informações mais recentes e atualizações.</p>
+        </div>
+        <img src="https://via.placeholder.com/400" alt="Imagem de exemplo 1">
+        <img src="https://via.placeholder.com/400" alt="Imagem de exemplo 2">
+    </div>
+</section>
+
+<section id="sobre">
+    <h2>Sobre</h2>
+    <div class="content">
+        <div class="text">
+            <p>Esta seção fala sobre mim e o propósito deste site. Sou um entusiasta da tecnologia e adoro compartilhar conhecimentos.</p>
+        </div>
+        <img src="https://via.placeholder.com/400" alt="Imagem de exemplo 1">
+        <img src="https://via.placeholder.com/400" alt="Imagem de exemplo 2">
+    </div>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+    <div class="content">
+        <div class="text">
+            <p>Se você deseja entrar em contato, pode me enviar um e-mail para: exemplo@dominio.com</p>
+        </div>
+        <img src="https://via.placeholder.com/400" alt="Imagem de exemplo 1">
+        <img src="https://via.placeholder.com/400" alt="Imagem de exemplo 2">
+    </div>
+</section>
+
+<footer>
+    <div class="footer-info">
+        <p>Endereço: Rua Exemplo, 123 - Cidade - Estado</p>
+        <p>Email: exemplo@dominio.com</p>
+    </div>
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+    </div>
+    <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        if (menu.classList.contains('show')) {
+            menu.classList.remove('show');
+            setTimeout(() => {
+                menu.style.display = 'none'; // Esconde após o fade-out
+            }, 500); // Tempo do fade-out
+        } else {
+            menu.style.display = 'flex'; // Mostra o menu
+            setTimeout(() => {
+                menu.classList.add('show'); // Aplica o efeito de fade-in
+            }, 10); // Pequeno atraso para garantir que a exibição ocorra primeiro
+        }
+    }
+</script>
+
+</body>
+</html>
